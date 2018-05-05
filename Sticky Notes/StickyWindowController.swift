@@ -132,7 +132,13 @@ class StickyWindowController: NSWindowController {
                 self.plusButton.isEnabled = true
                 self.moreButton.isEnabled = true
                 self.deleteButton.isEnabled = true
-                self.dimBox.isHidden = true
+                NSAnimationContext.beginGrouping()
+                NSAnimationContext.current.duration = 0.2
+                NSAnimationContext.current.completionHandler = {
+                    self.dimBox.isHidden = true
+                }
+                self.dimBox.animator().isHidden = true
+                NSAnimationContext.endGrouping()
                 self.contentTextView.isEditable = true
             })
             deleteViewContainer.addSubview((deleteVC?.view)!)
@@ -143,7 +149,16 @@ class StickyWindowController: NSWindowController {
         self.moreButton.isEnabled = false
         self.deleteButton.isEnabled = false
         self.contentTextView.isEditable = false
-        dimBox.isHidden = false
+        
+        NSAnimationContext.beginGrouping()
+        NSAnimationContext.current.duration = 0.2
+        NSAnimationContext.current.completionHandler = {
+            self.dimBox.isHidden = false
+        }
+        dimBox.animator().isHidden = false
+        NSAnimationContext.endGrouping()
+
+
     }
     
     func deleteAssociatedNote() {
