@@ -32,14 +32,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func makeNewStickyClicked(_ sender: Any) {
         let newSticky = Sticky(context: persistentContainer.viewContext)
-        newSticky.noteContent = ""
+        newSticky.noteContent = NSAttributedString(string: "")
         newSticky.colorTag = Int16(arc4random_uniform(6))
         makeNewSticky(newSticky)
     }
     
     func makeNewSticky() {
         let newSticky = Sticky(context: persistentContainer.viewContext)
-        newSticky.noteContent = ""
+        newSticky.noteContent = NSAttributedString(string: "")
         newSticky.colorTag = 0
         makeNewSticky(newSticky)
     }
@@ -137,7 +137,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if noteWindowController.contentTextView.string.count > 0 {
                 let sticky = noteWindowController.sticky
                 let window = noteWindowController.window!
-                sticky?.noteContent = noteWindowController.contentTextView.string
+                sticky?.noteContent = noteWindowController.contentTextView.attributedString()
                 sticky?.colorTag = Int16(noteWindowController.currentColorTag)
                 sticky?.width = Float(window.frame.size.width)
                 sticky?.height = Float(window.frame.size.height)

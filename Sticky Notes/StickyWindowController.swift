@@ -41,15 +41,17 @@ class StickyWindowController: NSWindowController {
 //        plusButton.addTrackingArea(plusTrackingArea)
         
         if let stk = sticky {
-            self.contentTextView.string = stk.noteContent!
-            self.updateColorAccordingToTag(tag: Int(stk.colorTag))
-            let mainScreenFrame = (NSScreen.main?.frame)!
-            NSAnimationContext.beginGrouping()
-            NSAnimationContext.current.duration = 0.5
-            NSAnimationContext.current.completionHandler = {
+            if let content = stk.noteContent {
+                self.contentTextView.textStorage?.setAttributedString(content)
+                self.updateColorAccordingToTag(tag: Int(stk.colorTag))
+                let mainScreenFrame = (NSScreen.main?.frame)!
+                NSAnimationContext.beginGrouping()
+                NSAnimationContext.current.duration = 0.5
+                NSAnimationContext.current.completionHandler = {
+                }
+                self.window?.animator().setFrame(CGRect(x: CGFloat(mainScreenFrame.size.width * CGFloat(stk.screenPositionX)), y: CGFloat(mainScreenFrame.size.height * CGFloat(stk.screenPositionY)), width: CGFloat(stk.width), height: CGFloat(stk.height)), display: true)
+                NSAnimationContext.endGrouping()
             }
-            self.window?.animator().setFrame(CGRect(x: CGFloat(mainScreenFrame.size.width * CGFloat(stk.screenPositionX)), y: CGFloat(mainScreenFrame.size.height * CGFloat(stk.screenPositionY)), width: CGFloat(stk.width), height: CGFloat(stk.height)), display: true)
-            NSAnimationContext.endGrouping()
         }
         self.contentTextView.font = NSFont.systemFont(ofSize: 20, weight: .light)
         self.window?.makeFirstResponder(self.contentTextView)
@@ -177,7 +179,7 @@ class StickyWindowController: NSWindowController {
     @IBAction func newStickyNote(_ sender: Any) {
         if let delegate = NSApplication.shared.delegate as? AppDelegate {
             let newSticky = Sticky(context: delegate.persistentContainer.viewContext)
-            newSticky.noteContent = ""
+            newSticky.noteContent = NSAttributedString(string: "")
             newSticky.colorTag = Int16(arc4random_uniform(6))
             delegate.makeNewSticky(newSticky)
         }
