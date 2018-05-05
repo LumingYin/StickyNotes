@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="StickieWindowController" customModule="Sticky_Notes" customModuleProvider="target">
+            <connections>
+                <outlet property="colorBoxTopConstraint" destination="vYB-OU-cLU" id="uff-p4-C3Q"/>
+                <outlet property="colorButtonsStackView" destination="14w-tR-fMA" id="nI2-Xd-E3v"/>
+                <outlet property="colorSelectorBox" destination="yd3-7l-psw" id="j24-zt-AzC"/>
+                <outlet property="contentBox" destination="dNG-68-th4" id="jIk-RP-Gdp"/>
+                <outlet property="deleteButton" destination="JKn-iU-1OJ" id="Ufz-UX-aNm"/>
+                <outlet property="moreButton" destination="cFh-nJ-oFv" id="eRu-VX-dC7"/>
+                <outlet property="plusButton" destination="zOn-qj-dUF" id="cDn-vh-sDT"/>
+                <outlet property="titleBarBox" destination="A5X-8R-a6p" id="UOZ-Gv-YHR"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" tabbingMode="disallowed" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" resizable="YES" fullSizeContentView="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="436"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="dNG-68-th4" userLabel="contentBox">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                        <view key="contentView" id="EBU-Oo-uFC">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCE-ad-LVX">
+                                    <rect key="frame" x="20" y="20" width="440" height="357"/>
+                                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Q5k-4e-zP4">
+                                        <rect key="frame" x="0.0" y="0.0" width="440" height="357"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ciy-e5-lp4">
+                                                <rect key="frame" x="0.0" y="0.0" width="440" height="357"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <size key="minSize" width="440" height="357"/>
+                                                <size key="maxSize" width="480" height="10000000"/>
+                                                <attributedString key="textStorage">
+                                                    <fragment content="Welcome to Sticky Notes.">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="systemLight" size="21"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </clipView>
+                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="55K-8d-o9N">
+                                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="BUe-SC-0GM">
+                                        <rect key="frame" x="424" y="0.0" width="16" height="357"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                </scrollView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="MCE-ad-LVX" firstAttribute="top" secondItem="EBU-Oo-uFC" secondAttribute="top" constant="59" id="1Nq-gL-kZp"/>
+                                <constraint firstItem="MCE-ad-LVX" firstAttribute="leading" secondItem="EBU-Oo-uFC" secondAttribute="leading" constant="20" id="6r8-hX-kK0"/>
+                                <constraint firstAttribute="bottom" secondItem="MCE-ad-LVX" secondAttribute="bottom" constant="20" id="J86-po-UL8"/>
+                                <constraint firstAttribute="trailing" secondItem="MCE-ad-LVX" secondAttribute="trailing" constant="20" id="bGj-ds-WoB"/>
+                            </constraints>
+                        </view>
+                        <color key="fillColor" red="1" green="0.94901960784313721" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </box>
+                    <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="A5X-8R-a6p" userLabel="titleBar">
+                        <rect key="frame" x="0.0" y="396" width="480" height="40"/>
+                        <view key="contentView" id="fTb-1M-XE6">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="40"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-nJ-oFv">
+                                    <rect key="frame" x="394" y="10" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="Hp5-lR-fWB"/>
+                                        <constraint firstAttribute="width" constant="20" id="SNa-pG-faD"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="more" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="7bg-2A-5Ec">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="moreColorOptions:" target="-2" id="ASN-Lg-EOS"/>
+                                    </connections>
+                                </button>
+                                <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-iU-1OJ">
+                                    <rect key="frame" x="440" y="10" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="dKj-aW-cvu"/>
+                                        <constraint firstAttribute="width" constant="20" id="e3e-S5-QcI"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="delete" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="xXF-id-dhQ">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="deleteStickyNote:" target="-2" id="TYN-nw-Dnh"/>
+                                    </connections>
+                                </button>
+                                <button wantsLayer="YES" verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zOn-qj-dUF">
+                                    <rect key="frame" x="14" y="11" width="18" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="9b7-mD-n8Y"/>
+                                        <constraint firstAttribute="width" constant="18" id="VvJ-CI-HBB"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="add" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Tbi-ul-Vwo">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                            <color key="value" red="0.75505631345177671" green="0.75505631345177671" blue="0.75505631345177671" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                            <color key="value" red="0.95686274509803926" green="0.72156862745098038" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="newStickyNote:" target="-2" id="mgY-J2-V6O"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="zOn-qj-dUF" firstAttribute="leading" secondItem="fTb-1M-XE6" secondAttribute="leading" constant="14" id="0uP-Yv-MPO"/>
+                                <constraint firstItem="zOn-qj-dUF" firstAttribute="top" secondItem="fTb-1M-XE6" secondAttribute="top" constant="11" id="4Mu-DY-Oz1"/>
+                                <constraint firstItem="JKn-iU-1OJ" firstAttribute="leading" secondItem="cFh-nJ-oFv" secondAttribute="trailing" constant="26" id="EHS-he-jxh"/>
+                                <constraint firstItem="cFh-nJ-oFv" firstAttribute="top" secondItem="fTb-1M-XE6" secondAttribute="top" constant="10" id="Z0w-RP-Okg"/>
+                                <constraint firstItem="JKn-iU-1OJ" firstAttribute="top" secondItem="fTb-1M-XE6" secondAttribute="top" constant="10" id="lgl-XQ-XyZ"/>
+                                <constraint firstAttribute="trailing" secondItem="JKn-iU-1OJ" secondAttribute="trailing" constant="20" id="sQY-sq-Rz5"/>
+                            </constraints>
+                        </view>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="0Tw-Dv-6pg"/>
+                        </constraints>
+                        <color key="fillColor" red="0.9882352941176471" green="0.71764705882352942" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </box>
+                    <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="yd3-7l-psw" userLabel="colorSelector">
+                        <rect key="frame" x="0.0" y="436" width="480" height="64"/>
+                        <view key="contentView" id="Nac-CO-b51">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="64"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <stackView distribution="fillEqually" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14w-tR-fMA">
+                                    <rect key="frame" x="100" y="12" width="280" height="40"/>
+                                    <subviews>
+                                        <button wantsLayer="YES" horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ewk-wm-8jq" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="52d-Ig-a3c"/>
+                                                <constraint firstAttribute="width" constant="40" id="gQW-UL-sWk"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="tick_black" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="LVF-2V-CLe">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                    <color key="value" red="0.99607843139999996" green="0.94509803920000002" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                                    <color key="value" red="1" green="0.72549019609999998" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="colorChanged:" target="-2" id="ZZg-QA-w3O"/>
+                                            </connections>
+                                        </button>
+                                        <button wantsLayer="YES" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="p6I-as-qrt" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
+                                            <rect key="frame" x="48" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="9Bk-wJ-xuC"/>
+                                                <constraint firstAttribute="height" constant="40" id="hXH-zz-22A"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="yaT-Zh-XSv">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                    <color key="value" red="0.78039215689999997" green="0.93725490199999995" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                                    <color key="value" red="0.066666666669999999" green="0.53725490200000003" blue="0.019607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="colorChanged:" target="-2" id="rDS-Sv-UPe"/>
+                                            </connections>
+                                        </button>
+                                        <button wantsLayer="YES" verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="qr6-ss-CKh" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
+                                            <rect key="frame" x="96" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="5cz-Sc-MF4"/>
+                                                <constraint firstAttribute="height" constant="40" id="u5V-cl-cxX"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="zfY-xa-ot2">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                    <color key="value" red="0.79215686269999996" green="0.90980392160000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                                    <color key="value" red="0.0039215686269999999" green="0.47450980390000003" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="colorChanged:" target="-2" id="xcQ-LN-ONa"/>
+                                            </connections>
+                                        </button>
+                                        <button wantsLayer="YES" verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ymq-gc-skn" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
+                                            <rect key="frame" x="144" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="DGW-Hz-0Jz"/>
+                                                <constraint firstAttribute="height" constant="40" id="S3X-FW-toF"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="MPT-d0-P9p">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                    <color key="value" red="1" green="0.78039215689999997" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                                    <color key="value" red="0.36470588240000001" green="0.14117647059999999" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="colorChanged:" target="-2" id="h97-LI-XMd"/>
+                                            </connections>
+                                        </button>
+                                        <button wantsLayer="YES" verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-ui-vY7" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
+                                            <rect key="frame" x="192" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="Zmw-Y4-3v8"/>
+                                                <constraint firstAttribute="height" constant="40" id="aJG-J8-kX2"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="5Rc-Jn-vqF">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                    <color key="value" red="1" green="0.93333333330000001" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                                    <color key="value" red="0.85098039219999999" green="0.0039215686269999999" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="colorChanged:" target="-2" id="2TS-LV-U8e"/>
+                                            </connections>
+                                        </button>
+                                        <button wantsLayer="YES" verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="H6X-ny-yI6" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
+                                            <rect key="frame" x="240" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="PrF-mV-YsE"/>
+                                                <constraint firstAttribute="width" constant="40" id="l6s-vi-iG8"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="IPu-Ja-Bwc">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                    <color key="value" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="activeButtonColor">
+                                                    <color key="value" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="colorChanged:" target="-2" id="Q2l-Xd-kxo"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="280" id="kUT-C4-47b"/>
+                                        <constraint firstAttribute="height" constant="40" id="pk9-D5-gWp"/>
+                                    </constraints>
+                                    <visibilityPriorities>
+                                        <integer value="1000"/>
+                                        <integer value="1000"/>
+                                        <integer value="1000"/>
+                                        <integer value="1000"/>
+                                        <integer value="1000"/>
+                                        <integer value="1000"/>
+                                    </visibilityPriorities>
+                                    <customSpacing>
+                                        <real value="3.4028234663852886e+38"/>
+                                        <real value="3.4028234663852886e+38"/>
+                                        <real value="3.4028234663852886e+38"/>
+                                        <real value="3.4028234663852886e+38"/>
+                                        <real value="3.4028234663852886e+38"/>
+                                        <real value="3.4028234663852886e+38"/>
+                                    </customSpacing>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="14w-tR-fMA" firstAttribute="centerY" secondItem="Nac-CO-b51" secondAttribute="centerY" id="CSn-SX-eRh"/>
+                                <constraint firstItem="14w-tR-fMA" firstAttribute="centerX" secondItem="Nac-CO-b51" secondAttribute="centerX" id="va8-XF-auy"/>
+                            </constraints>
+                        </view>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="iQ0-GR-g5h"/>
+                        </constraints>
+                        <color key="fillColor" red="1" green="0.97254901960784312" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </box>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="A5X-8R-a6p" secondAttribute="trailing" id="16F-2h-Ptr"/>
+                    <constraint firstAttribute="bottom" secondItem="dNG-68-th4" secondAttribute="bottom" id="3cQ-dW-9Mp"/>
+                    <constraint firstAttribute="trailing" secondItem="dNG-68-th4" secondAttribute="trailing" id="84Y-T7-6zP"/>
+                    <constraint firstAttribute="trailing" secondItem="A5X-8R-a6p" secondAttribute="trailing" id="DME-zZ-vB4"/>
+                    <constraint firstItem="yd3-7l-psw" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="DZb-Nk-ZaK"/>
+                    <constraint firstItem="A5X-8R-a6p" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="OeB-qn-lRm"/>
+                    <constraint firstItem="dNG-68-th4" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="gGB-Ub-9HF"/>
+                    <constraint firstAttribute="trailing" secondItem="yd3-7l-psw" secondAttribute="trailing" id="hE7-3l-VGa"/>
+                    <constraint firstItem="A5X-8R-a6p" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="kbG-CI-tpt"/>
+                    <constraint firstItem="A5X-8R-a6p" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="s14-04-UZb"/>
+                    <constraint firstItem="yd3-7l-psw" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="-64" id="vYB-OU-cLU"/>
+                    <constraint firstItem="dNG-68-th4" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="zHs-JE-gib"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="244"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="add" width="45" height="48"/>
+        <image name="delete" width="38" height="47"/>
+        <image name="more" width="42" height="9"/>
+        <image name="tick_black" width="51" height="37"/>
+    </resources>
+</document>
