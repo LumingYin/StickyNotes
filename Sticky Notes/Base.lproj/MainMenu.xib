@@ -14,6 +14,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Sticky_Notes" customModuleProvider="target">
             <connections>
                 <outlet property="askBeforeDeletionMenuItem" destination="Ee3-8A-yG4" id="oi6-n4-FKW"/>
+                <outlet property="floatOnTopMenuItem" destination="fTo-Yh-tvT" id="bbM-59-EYK"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>

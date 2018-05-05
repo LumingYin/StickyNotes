@@ -12,6 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var arrayOfStickyWindowControllers: [StickyWindowController] = []
+    @IBOutlet weak var floatOnTopMenuItem: NSMenuItem!
     @IBOutlet weak var askBeforeDeletionMenuItem: NSMenuItem!
     
     @IBAction func closeWindowClicked(_ sender: Any) {
@@ -48,6 +49,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let newVC = StickyWindowController()
         newVC.sticky = sticky
         self.arrayOfStickyWindowControllers.append(newVC)
+        if floatOnTopMenuItem.state == .on {
+            newVC.window?.level = .floating
+        }
         newVC.showWindow(nil)
         newVC.window?.orderFront(nil)
     }

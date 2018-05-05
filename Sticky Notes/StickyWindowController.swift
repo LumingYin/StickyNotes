@@ -179,10 +179,7 @@ class StickyWindowController: NSWindowController {
     
     @IBAction func newStickyNote(_ sender: Any) {
         if let delegate = NSApplication.shared.delegate as? AppDelegate {
-            let newSticky = Sticky(context: delegate.persistentContainer.viewContext)
-            newSticky.noteContent = NSAttributedString(string: "")
-            newSticky.colorTag = Int16(arc4random_uniform(6))
-            delegate.makeNewSticky(newSticky)
+            delegate.makeNewStickyClicked(self)
         }
     }
 }
