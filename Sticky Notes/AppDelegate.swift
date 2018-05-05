@@ -130,8 +130,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
         return persistentContainer.viewContext.undoManager
     }
-
-    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+    
+    @IBAction func saveButtonClicked(_ sender: Any) {
+        updateLocalDatabase()
+    }
+    
+    func updateLocalDatabase() {
         let mainScreenFrame = NSScreen.main?.frame
         for noteWindowController in arrayOfStickyWindowControllers {
             if noteWindowController.contentTextView.string.count > 0 {
@@ -143,11 +147,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 sticky?.height = Float(window.frame.size.height)
                 sticky?.screenPositionX = Float(window.frame.origin.x / (mainScreenFrame?.size.width)!)
                 sticky?.screenPositionY = Float(window.frame.origin.y / (mainScreenFrame?.size.height)!)
-//                print("screenPos\(sticky?.screenPositionX), y\(sticky?.screenPositionY)")
-
+            } else {
+                if let pendingDeletionSticky = noteWindowController.sticky {
+                    persistentContainer.viewContext.delete(pendingDeletionSticky)
+                }
             }
         }
-        
+    }
+    
+
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        updateLocalDatabase()
         // Save changes in the application's managed object context before the application terminates.
         let context = persistentContainer.viewContext
         
@@ -190,5 +200,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return .terminateNow
     }
 
+    @IBAction func floatOnTopClicked(_ sender: NSMenuItem) {
+        if sender.state == .on {
+            sender.state = .off
+            for controller in arrayOfStickyWindowControllers {
+                controller.window?.level = .normal
+            }
+        } else {
+            sender.state = .on
+            for controller in arrayOfStickyWindowControllers {
+                controller.window?.level = .floating
+            }
+
+        }
+    }
 }
 
