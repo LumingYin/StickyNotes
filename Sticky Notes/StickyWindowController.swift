@@ -156,6 +156,7 @@ class StickyWindowController: NSWindowController {
             })
             deleteViewContainer.addSubview((deleteVC?.view)!)
         }
+        self.window?.makeFirstResponder(deleteVC?.keepButton)
         
         self.plusButton.isEnabled = false
         self.moreButton.isEnabled = false
