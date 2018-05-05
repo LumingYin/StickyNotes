@@ -20,8 +20,6 @@ class StickyWindowController: NSWindowController {
     @IBOutlet weak var colorButtonsStackView: NSStackView!
     @IBOutlet weak var deleteViewContainer: NSView!
     @IBOutlet var contentTextView: NSTextView!
-    @IBOutlet weak var yellowChangeButton: FlatButton!
-    @IBOutlet weak var greenChangeButton: FlatButton!
     
     var currentColorTag = 0
     var deleteVC: DeleteNoteViewController?
@@ -104,12 +102,12 @@ class StickyWindowController: NSWindowController {
     
     
     @IBAction func colorChanged(_ sender: NSButton) {
-//        print(sender)
 //        sender.image = NSImage(named: NSImage.Name(rawValue: "tick_black"))
 //        sender.setNeedsDisplay()
         updateColorAccordingToTag(tag: sender.tag)
         NSAnimationContext.beginGrouping()
         NSAnimationContext.current.duration = 0.2
+        NSAnimationContext.current.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
         NSAnimationContext.current.completionHandler = {
             self.colorBoxTopConstraint.constant = -64
         }
@@ -160,6 +158,7 @@ class StickyWindowController: NSWindowController {
     @IBAction func moreColorOptions(_ sender: Any) {
         NSAnimationContext.beginGrouping()
         NSAnimationContext.current.duration = 0.2
+        NSAnimationContext.current.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
         NSAnimationContext.current.completionHandler = {
             self.colorBoxTopConstraint.constant = 0
         }
