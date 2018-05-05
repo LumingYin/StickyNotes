@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var arrayOfStickieWindowControllers: [StickieWindowController] = []
+    var arrayOfStickyWindowControllers: [StickyWindowController] = []
 
     @IBAction func makeNewStickyClicked(_ sender: Any) {
         makeNewSticky()
@@ -25,9 +25,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func makeNewSticky(_ sticky: Sticky) {
-        let newVC = StickieWindowController()
+        let newVC = StickyWindowController()
         newVC.sticky = sticky
-        self.arrayOfStickieWindowControllers.append(newVC)
+        self.arrayOfStickyWindowControllers.append(newVC)
         newVC.showWindow(nil)
         newVC.window?.orderFront(nil)
     }
@@ -36,8 +36,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var hasExistingDataFetched: Bool = false
         do {
             let fetchRequest: NSFetchRequest<Sticky> = Sticky.fetchRequest()
-            let stickies = try self.persistentContainer.viewContext.fetch(fetchRequest)
-            for sticky in stickies {
+            let Stickys = try self.persistentContainer.viewContext.fetch(fetchRequest)
+            for sticky in Stickys {
                 makeNewSticky(sticky)
                 hasExistingDataFetched = true
             }
@@ -106,7 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        for noteWindow in arrayOfStickieWindowControllers {
+        for noteWindow in arrayOfStickyWindowControllers {
             let sticky = noteWindow.sticky
             sticky?.noteContent = noteWindow.contentTextView.string
             sticky?.colorTag = Int16(noteWindow.currentColorTag)

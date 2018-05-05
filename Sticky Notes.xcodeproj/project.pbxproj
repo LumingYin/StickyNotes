@@ -11,8 +11,8 @@
 		3CCEFB7D209D37AB00429258 /* Sticky_Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB7B209D37AB00429258 /* Sticky_Notes.xcdatamodeld */; };
 		3CCEFB7F209D37AD00429258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCEFB7E209D37AD00429258 /* Assets.xcassets */; };
 		3CCEFB82209D37AD00429258 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCEFB80209D37AD00429258 /* MainMenu.xib */; };
-		3CCEFB8C209D37D000429258 /* StickieWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB8A209D37D000429258 /* StickieWindowController.swift */; };
-		3CCEFB8D209D37D000429258 /* StickieWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCEFB8B209D37D000429258 /* StickieWindowController.xib */; };
+		3CCEFB8C209D37D000429258 /* StickyWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB8A209D37D000429258 /* StickyWindowController.swift */; };
+		3CCEFB8D209D37D000429258 /* StickyWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCEFB8B209D37D000429258 /* StickyWindowController.xib */; };
 		3CCEFB8F209D3B0F00429258 /* TrafficLightlessWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB8E209D3B0F00429258 /* TrafficLightlessWindow.swift */; };
 		3CCEFB91209D402E00429258 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB90209D402D00429258 /* FlatButton.swift */; };
 		3CCEFB94209D4AF800429258 /* DeleteNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB92209D4AF800429258 /* DeleteNoteViewController.swift */; };
@@ -28,8 +28,8 @@
 		3CCEFB81209D37AD00429258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3CCEFB83209D37AD00429258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CCEFB84209D37AD00429258 /* Sticky_Notes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sticky_Notes.entitlements; sourceTree = "<group>"; };
-		3CCEFB8A209D37D000429258 /* StickieWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickieWindowController.swift; sourceTree = "<group>"; };
-		3CCEFB8B209D37D000429258 /* StickieWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickieWindowController.xib; sourceTree = "<group>"; };
+		3CCEFB8A209D37D000429258 /* StickyWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyWindowController.swift; sourceTree = "<group>"; };
+		3CCEFB8B209D37D000429258 /* StickyWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickyWindowController.xib; sourceTree = "<group>"; };
 		3CCEFB8E209D3B0F00429258 /* TrafficLightlessWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightlessWindow.swift; sourceTree = "<group>"; };
 		3CCEFB90209D402D00429258 /* FlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
 		3CCEFB92209D4AF800429258 /* DeleteNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteViewController.swift; sourceTree = "<group>"; };
@@ -70,8 +70,8 @@
 				3CDEC13D209D5C0C008B0F95 /* sticky.icns */,
 				3CCEFB90209D402D00429258 /* FlatButton.swift */,
 				3CCEFB79209D37AB00429258 /* AppDelegate.swift */,
-				3CCEFB8A209D37D000429258 /* StickieWindowController.swift */,
-				3CCEFB8B209D37D000429258 /* StickieWindowController.xib */,
+				3CCEFB8A209D37D000429258 /* StickyWindowController.swift */,
+				3CCEFB8B209D37D000429258 /* StickyWindowController.xib */,
 				3CCEFB92209D4AF800429258 /* DeleteNoteViewController.swift */,
 				3CCEFB93209D4AF800429258 /* DeleteNoteViewController.xib */,
 				3CCEFB8E209D3B0F00429258 /* TrafficLightlessWindow.swift */,
@@ -143,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CDEC13E209D5C0C008B0F95 /* sticky.icns in Resources */,
-				3CCEFB8D209D37D000429258 /* StickieWindowController.xib in Resources */,
+				3CCEFB8D209D37D000429258 /* StickyWindowController.xib in Resources */,
 				3CCEFB95209D4AF800429258 /* DeleteNoteViewController.xib in Resources */,
 				3CCEFB7F209D37AD00429258 /* Assets.xcassets in Resources */,
 				3CCEFB82209D37AD00429258 /* MainMenu.xib in Resources */,
@@ -157,7 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CCEFB8C209D37D000429258 /* StickieWindowController.swift in Sources */,
+				3CCEFB8C209D37D000429258 /* StickyWindowController.swift in Sources */,
 				3CCEFB8F209D3B0F00429258 /* TrafficLightlessWindow.swift in Sources */,
 				3CCEFB91209D402E00429258 /* FlatButton.swift in Sources */,
 				3CCEFB7D209D37AB00429258 /* Sticky_Notes.xcdatamodeld in Sources */,

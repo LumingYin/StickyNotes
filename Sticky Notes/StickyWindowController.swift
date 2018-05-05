@@ -1,5 +1,5 @@
 //
-//  StickieWindowController.swift
+//  StickyWindowController.swift
 //  Sticky Notes
 //
 //  Created by Numeric on 5/4/18.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StickieWindowController: NSWindowController {
+class StickyWindowController: NSWindowController {
     @IBOutlet weak var plusButton: NSButton!
     @IBOutlet weak var moreButton: NSButton!
     @IBOutlet weak var deleteButton: NSButton!
@@ -25,7 +25,7 @@ class StickieWindowController: NSWindowController {
     var sticky: Sticky?
     
     convenience init() {
-        self.init(windowNibName: NSNib.Name(rawValue: "StickieWindowController"))
+        self.init(windowNibName: NSNib.Name(rawValue: "StickyWindowController"))
     }
 
     override func windowWillLoad() {
@@ -134,12 +134,12 @@ class StickieWindowController: NSWindowController {
             deleteVC = DeleteNoteViewController(deleteCompletion: {
                 self.window?.close()
                 if let delegate = NSApplication.shared.delegate as? AppDelegate,
-                    let index = delegate.arrayOfStickieWindowControllers.index(of: self) {
+                    let index = delegate.arrayOfStickyWindowControllers.index(of: self) {
                     if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext, let stk = self.sticky {
                         context.delete(stk)
                         
                     }
-                    delegate.arrayOfStickieWindowControllers.remove(at: index)
+                    delegate.arrayOfStickyWindowControllers.remove(at: index)
                 }
             }, cancelCompletion: {
                 self.plusButton.isEnabled = true

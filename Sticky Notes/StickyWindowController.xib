@@ -7,7 +7,7 @@
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="StickieWindowController" customModule="Sticky_Notes" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="StickyWindowController" customModule="Sticky_Notes" customModuleProvider="target">
             <connections>
                 <outlet property="colorBoxTopConstraint" destination="vYB-OU-cLU" id="uff-p4-C3Q"/>
                 <outlet property="colorButtonsStackView" destination="14w-tR-fMA" id="nI2-Xd-E3v"/>
