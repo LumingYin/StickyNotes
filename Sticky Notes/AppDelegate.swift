@@ -12,9 +12,18 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var arrayOfStickyWindowControllers: [StickyWindowController] = []
-
+    
+    @IBAction func closeWindowClicked(_ sender: Any) {
+        if let stickyWindowController = NSApplication.shared.keyWindow?.windowController as? StickyWindowController {
+            stickyWindowController.deleteStickyNote(self)
+        }
+    }
+    
     @IBAction func makeNewStickyClicked(_ sender: Any) {
-        makeNewSticky()
+        let newSticky = Sticky(context: persistentContainer.viewContext)
+        newSticky.noteContent = ""
+        newSticky.colorTag = Int16(arc4random_uniform(6))
+        makeNewSticky(newSticky)
     }
     
     func makeNewSticky() {
@@ -106,10 +115,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        for noteWindow in arrayOfStickyWindowControllers {
-            let sticky = noteWindow.sticky
-            sticky?.noteContent = noteWindow.contentTextView.string
-            sticky?.colorTag = Int16(noteWindow.currentColorTag)
+        let mainScreenFrame = NSScreen.main?.frame
+        for noteWindowController in arrayOfStickyWindowControllers {
+            if noteWindowController.contentTextView.string.count > 0 {
+                let sticky = noteWindowController.sticky
+                let window = noteWindowController.window!
+                sticky?.noteContent = noteWindowController.contentTextView.string
+                sticky?.colorTag = Int16(noteWindowController.currentColorTag)
+                sticky?.width = Float(window.frame.size.width)
+                sticky?.height = Float(window.frame.size.height)
+                sticky?.screenPositionX = Float(window.frame.origin.x / (mainScreenFrame?.size.width)!)
+                sticky?.screenPositionY = Float(window.frame.origin.y / (mainScreenFrame?.size.height)!)
+//                print("screenPos\(sticky?.screenPositionX), y\(sticky?.screenPositionY)")
+
+            }
         }
         
         // Save changes in the application's managed object context before the application terminates.

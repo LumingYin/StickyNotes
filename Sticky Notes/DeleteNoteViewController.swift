@@ -20,7 +20,8 @@ class DeleteNoteViewController: NSViewController {
     }
     
     @IBAction func toggleDeletionPrompt(_ sender: NSButton) {
-        
+//        sender.state
+//        UserDefaults.standard.set(<#T##value: Bool##Bool#>, forKey: <#T##String#>)
     }
     
     override func viewDidLoad() {

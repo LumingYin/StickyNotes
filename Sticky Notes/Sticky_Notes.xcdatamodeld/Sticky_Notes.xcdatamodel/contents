@@ -2,9 +2,13 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17F59b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Sticky" representedClassName="Sticky" syncable="YES" codeGenerationType="class">
         <attribute name="colorTag" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Float" minValueString="310" defaultValueString="310" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="noteContent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenPositionX" optional="YES" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.35" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="screenPositionY" optional="YES" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.35" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" minValueString="310" defaultValueString="310" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Sticky" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Sticky" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>

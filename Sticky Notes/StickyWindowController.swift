@@ -36,35 +36,41 @@ class StickyWindowController: NSWindowController {
         self.window?.standardWindowButton(.closeButton)?.isHidden = true
         self.window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
         self.window?.standardWindowButton(.zoomButton)?.isHidden = true
-        
-        let plusTrackingArea = NSTrackingArea.init(rect: plusButton.bounds, options: NSTrackingArea.Options(rawValue: NSTrackingArea.Options.RawValue(UInt8(NSTrackingArea.Options.mouseEnteredAndExited.rawValue) | UInt8(NSTrackingArea.Options.activeAlways.rawValue))), owner: self, userInfo: nil)
-        plusButton.addTrackingArea(plusTrackingArea)
+//        let plusTrackingArea = NSTrackingArea.init(rect: plusButton.bounds, options: NSTrackingArea.Options(rawValue: NSTrackingArea.Options.RawValue(UInt8(NSTrackingArea.Options.mouseEnteredAndExited.rawValue) | UInt8(NSTrackingArea.Options.activeAlways.rawValue))), owner: self, userInfo: nil)
+//        plusButton.addTrackingArea(plusTrackingArea)
         
         if let stk = sticky {
             self.contentTextView.string = stk.noteContent!
             self.updateColorAccordingToTag(tag: Int(stk.colorTag))
+            let mainScreenFrame = (NSScreen.main?.frame)!
+            NSAnimationContext.beginGrouping()
+            NSAnimationContext.current.duration = 0.5
+            NSAnimationContext.current.completionHandler = {
+            }
+            self.window?.animator().setFrame(CGRect(x: CGFloat(mainScreenFrame.size.width * CGFloat(stk.screenPositionX)), y: CGFloat(mainScreenFrame.size.height * CGFloat(stk.screenPositionY)), width: CGFloat(stk.width), height: CGFloat(stk.height)), display: true)
+            NSAnimationContext.endGrouping()
         }
         self.contentTextView.font = NSFont.systemFont(ofSize: 20, weight: .light)
         self.window?.makeFirstResponder(self.contentTextView)
     }
     
     
-    override func mouseEntered(with event: NSEvent) {
-        print("mouse entered \(event)")
-        if let cell = plusButton.cell as? NSButtonCell {
-            cell.backgroundColor = NSColor.black.withAlphaComponent(0.5)
-            
-        }
-
-    }
-    
-    override func mouseExited(with event: NSEvent) {
-        print("mouse exited \(event)")
-        if let cell = plusButton.cell as? NSButtonCell {
-            cell.backgroundColor = NSColor.black.withAlphaComponent(0)
-        }
-
-    }
+//    override func mouseEntered(with event: NSEvent) {
+//        print("mouse entered \(event)")
+//        if let cell = plusButton.cell as? NSButtonCell {
+//            cell.backgroundColor = NSColor.black.withAlphaComponent(0.5)
+//
+//        }
+//
+//    }
+//
+//    override func mouseExited(with event: NSEvent) {
+//        print("mouse exited \(event)")
+//        if let cell = plusButton.cell as? NSButtonCell {
+//            cell.backgroundColor = NSColor.black.withAlphaComponent(0)
+//        }
+//
+//    }
     
     @IBAction func colorChanged(_ sender: FlatButton) {
         updateColorAccordingToTag(tag: sender.tag)
@@ -158,7 +164,10 @@ class StickyWindowController: NSWindowController {
     
     @IBAction func newStickyNote(_ sender: Any) {
         if let delegate = NSApplication.shared.delegate as? AppDelegate {
-            delegate.makeNewSticky()
+            let newSticky = Sticky(context: delegate.persistentContainer.viewContext)
+            newSticky.noteContent = ""
+            newSticky.colorTag = Int16(arc4random_uniform(6))
+            delegate.makeNewSticky(newSticky)
         }
     }
 }

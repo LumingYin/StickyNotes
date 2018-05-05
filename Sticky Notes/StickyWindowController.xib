@@ -28,29 +28,30 @@
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" tabbingMode="disallowed" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" resizable="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="436"/>
+            <rect key="contentRect" x="196" y="240" width="310" height="310"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <value key="minSize" type="size" width="310" height="310"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                <rect key="frame" x="0.0" y="0.0" width="310" height="310"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="dNG-68-th4" userLabel="contentBox">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="310"/>
                         <view key="contentView" id="EBU-Oo-uFC">
-                            <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                            <rect key="frame" x="0.0" y="0.0" width="310" height="310"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCE-ad-LVX">
-                                    <rect key="frame" x="20" y="20" width="440" height="357"/>
+                                    <rect key="frame" x="20" y="20" width="270" height="231"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Q5k-4e-zP4">
-                                        <rect key="frame" x="0.0" y="0.0" width="440" height="357"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="231"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="ciy-e5-lp4">
-                                                <rect key="frame" x="0.0" y="0.0" width="440" height="357"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="270" height="231"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <size key="minSize" width="440" height="357"/>
+                                                <size key="minSize" width="270" height="231"/>
                                                 <size key="maxSize" width="480" height="10000000"/>
                                                 <attributedString key="textStorage">
                                                     <fragment content=" ">
@@ -70,7 +71,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="BUe-SC-0GM">
-                                        <rect key="frame" x="424" y="0.0" width="16" height="357"/>
+                                        <rect key="frame" x="254" y="0.0" width="16" height="231"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
@@ -85,13 +86,13 @@
                         <color key="fillColor" red="1" green="0.94901960784313721" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </box>
                     <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="A5X-8R-a6p" userLabel="titleBar">
-                        <rect key="frame" x="0.0" y="396" width="480" height="40"/>
+                        <rect key="frame" x="0.0" y="270" width="310" height="40"/>
                         <view key="contentView" id="fTb-1M-XE6">
-                            <rect key="frame" x="0.0" y="0.0" width="480" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-nJ-oFv">
-                                    <rect key="frame" x="394" y="10" width="20" height="20"/>
+                                    <rect key="frame" x="224" y="10" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="Hp5-lR-fWB"/>
                                         <constraint firstAttribute="width" constant="20" id="SNa-pG-faD"/>
@@ -105,7 +106,7 @@
                                     </connections>
                                 </button>
                                 <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-iU-1OJ">
-                                    <rect key="frame" x="440" y="10" width="20" height="20"/>
+                                    <rect key="frame" x="270" y="10" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="dKj-aW-cvu"/>
                                         <constraint firstAttribute="width" constant="20" id="e3e-S5-QcI"/>
@@ -162,13 +163,13 @@
                         <color key="fillColor" red="0.9882352941176471" green="0.71764705882352942" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </box>
                     <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="yd3-7l-psw" userLabel="colorSelector">
-                        <rect key="frame" x="0.0" y="436" width="480" height="64"/>
+                        <rect key="frame" x="0.0" y="310" width="310" height="64"/>
                         <view key="contentView" id="Nac-CO-b51">
-                            <rect key="frame" x="0.0" y="0.0" width="480" height="64"/>
+                            <rect key="frame" x="0.0" y="0.0" width="310" height="64"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <stackView distribution="fillEqually" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14w-tR-fMA">
-                                    <rect key="frame" x="100" y="12" width="280" height="40"/>
+                                    <rect key="frame" x="15" y="12" width="280" height="40"/>
                                     <subviews>
                                         <button wantsLayer="YES" horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ewk-wm-8jq" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -372,13 +373,13 @@
                         <color key="fillColor" red="1" green="0.97254901960784312" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </box>
                     <box hidden="YES" boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="gkD-k6-c0E" userLabel="dimBox">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="310"/>
                         <view key="contentView" id="6iW-Qj-wQ2">
-                            <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                            <rect key="frame" x="0.0" y="0.0" width="310" height="310"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="mGA-pK-Tie">
-                                    <rect key="frame" x="90" y="136" width="300" height="165"/>
+                                    <rect key="frame" x="5" y="73" width="300" height="165"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="165" id="2SL-u1-d6N"/>
                                         <constraint firstAttribute="width" constant="300" id="5Mg-2W-gVU"/>
@@ -415,7 +416,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="139" y="244"/>
+            <point key="canvasLocation" x="144" y="564"/>
         </window>
     </objects>
     <resources>
