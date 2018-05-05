@@ -31,8 +31,34 @@ class StickyWindowController: NSWindowController {
     override func windowWillLoad() {
     }
     
+    override func mouseEntered(with event: NSEvent) {
+        print("mouse entered \(event)")
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = 0.2
+            self.titleBarBox.animator().alphaValue = 1
+        }) {
+            self.titleBarBox.alphaValue = 1
+        }
+    }
+
+    override func mouseExited(with event: NSEvent) {
+        print("mouse exited \(event)")
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = 0.2
+            self.titleBarBox.animator().alphaValue = 0.3
+        }) {
+            self.titleBarBox.alphaValue = 0.3
+        }
+        
+    }
+
+    
     override func windowDidLoad() {
         super.windowDidLoad()
+        self.titleBarBox.alphaValue = 0.3
+        let windowTrackingArea = NSTrackingArea.init(rect:self.contentBox.bounds, options: NSTrackingArea.Options(rawValue: NSTrackingArea.Options.RawValue(UInt8(NSTrackingArea.Options.mouseEnteredAndExited.rawValue) | UInt8(NSTrackingArea.Options.activeAlways.rawValue))), owner: self, userInfo: nil)
+        self.contentBox.addTrackingArea(windowTrackingArea)
+
         self.window?.isMovableByWindowBackground = true
         self.window?.standardWindowButton(.closeButton)?.isHidden = true
         self.window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
