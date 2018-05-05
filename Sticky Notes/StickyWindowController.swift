@@ -32,22 +32,36 @@ class StickyWindowController: NSWindowController {
     }
     
     override func mouseEntered(with event: NSEvent) {
-        print("mouse entered \(event)")
         NSAnimationContext.runAnimationGroup({ (context) in
             context.duration = 0.2
             self.titleBarBox.animator().alphaValue = 1
+            self.plusButton.animator().alphaValue = 1
+            self.moreButton.animator().alphaValue = 1
+            self.deleteButton.animator().alphaValue = 1
+
         }) {
             self.titleBarBox.alphaValue = 1
+            self.plusButton.alphaValue = 1
+            self.moreButton.alphaValue = 1
+            self.deleteButton.alphaValue = 1
+
         }
     }
 
     override func mouseExited(with event: NSEvent) {
-        print("mouse exited \(event)")
         NSAnimationContext.runAnimationGroup({ (context) in
             context.duration = 0.2
             self.titleBarBox.animator().alphaValue = 0.3
+            self.plusButton.animator().alphaValue = 0
+            self.moreButton.animator().alphaValue = 0
+            self.deleteButton.animator().alphaValue = 0
+
         }) {
             self.titleBarBox.alphaValue = 0.3
+            self.plusButton.alphaValue = 0
+            self.moreButton.alphaValue = 0
+            self.deleteButton.alphaValue = 0
+
         }
         
     }
@@ -56,6 +70,9 @@ class StickyWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         self.titleBarBox.alphaValue = 0.3
+        self.plusButton.alphaValue = 0
+        self.moreButton.alphaValue = 0
+        self.deleteButton.alphaValue = 0
         let windowTrackingArea = NSTrackingArea.init(rect:self.contentBox.bounds, options: NSTrackingArea.Options(rawValue: NSTrackingArea.Options.RawValue(UInt8(NSTrackingArea.Options.mouseEnteredAndExited.rawValue) | UInt8(NSTrackingArea.Options.activeAlways.rawValue))), owner: self, userInfo: nil)
         self.contentBox.addTrackingArea(windowTrackingArea)
 
