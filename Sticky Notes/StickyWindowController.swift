@@ -37,8 +37,6 @@ class StickyWindowController: NSWindowController {
         self.window?.standardWindowButton(.closeButton)?.isHidden = true
         self.window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
         self.window?.standardWindowButton(.zoomButton)?.isHidden = true
-//        let plusTrackingArea = NSTrackingArea.init(rect: plusButton.bounds, options: NSTrackingArea.Options(rawValue: NSTrackingArea.Options.RawValue(UInt8(NSTrackingArea.Options.mouseEnteredAndExited.rawValue) | UInt8(NSTrackingArea.Options.activeAlways.rawValue))), owner: self, userInfo: nil)
-//        plusButton.addTrackingArea(plusTrackingArea)
         self.contentTextView.font = NSFont.systemFont(ofSize: 20, weight: .light)
 
         if let stk = sticky {
@@ -57,23 +55,6 @@ class StickyWindowController: NSWindowController {
         self.window?.makeFirstResponder(self.contentTextView)
     }
     
-    
-//    override func mouseEntered(with event: NSEvent) {
-//        print("mouse entered \(event)")
-//        if let cell = plusButton.cell as? NSButtonCell {
-//            cell.backgroundColor = NSColor.black.withAlphaComponent(0.5)
-//
-//        }
-//
-//    }
-//
-//    override func mouseExited(with event: NSEvent) {
-//        print("mouse exited \(event)")
-//        if let cell = plusButton.cell as? NSButtonCell {
-//            cell.backgroundColor = NSColor.black.withAlphaComponent(0)
-//        }
-//
-//    }
     
     @IBAction func colorChanged(_ sender: FlatButton) {
         updateColorAccordingToTag(tag: sender.tag)

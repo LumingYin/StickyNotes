@@ -241,7 +241,7 @@ open class FlatButton: NSButton, CALayerDelegate {
         }
         let maskLayer = CALayer()
 //        let imageSize = image.size
-        var imageRect:CGRect = NSMakeRect(self.frame.size.width * 0.1, self.frame.size.height * 0.08, self.frame.size.width * 0.65, self.frame.size.height * 0.65)
+        var imageRect:CGRect = self.frame
         let imageRef = image.cgImage(forProposedRect: &imageRect, context: nil, hints: nil)
         maskLayer.contents = imageRef
         iconLayer.frame = imageRect

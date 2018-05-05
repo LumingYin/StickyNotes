@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C5F51C2209DC8AD00EAFAFB /* InteractiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F51C1209DC8AD00EAFAFB /* InteractiveButton.swift */; };
 		3CCEFB7A209D37AB00429258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB79209D37AB00429258 /* AppDelegate.swift */; };
 		3CCEFB7D209D37AB00429258 /* Sticky_Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB7B209D37AB00429258 /* Sticky_Notes.xcdatamodeld */; };
 		3CCEFB7F209D37AD00429258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCEFB7E209D37AD00429258 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C5F51C1209DC8AD00EAFAFB /* InteractiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveButton.swift; sourceTree = "<group>"; };
 		3CCEFB76209D37AB00429258 /* Sticky Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sticky Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCEFB79209D37AB00429258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CCEFB7C209D37AB00429258 /* Sticky_Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sticky_Notes.xcdatamodel; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				3CCEFB79209D37AB00429258 /* AppDelegate.swift */,
 				3CCEFB8A209D37D000429258 /* StickyWindowController.swift */,
 				3CCEFB8B209D37D000429258 /* StickyWindowController.xib */,
+				3C5F51C1209DC8AD00EAFAFB /* InteractiveButton.swift */,
 				3CCEFB92209D4AF800429258 /* DeleteNoteViewController.swift */,
 				3CCEFB93209D4AF800429258 /* DeleteNoteViewController.xib */,
 				3CCEFB8E209D3B0F00429258 /* TrafficLightlessWindow.swift */,
@@ -161,6 +164,7 @@
 				3CCEFB8F209D3B0F00429258 /* TrafficLightlessWindow.swift in Sources */,
 				3CCEFB91209D402E00429258 /* FlatButton.swift in Sources */,
 				3CCEFB7D209D37AB00429258 /* Sticky_Notes.xcdatamodeld in Sources */,
+				3C5F51C2209DC8AD00EAFAFB /* InteractiveButton.swift in Sources */,
 				3CCEFB7A209D37AB00429258 /* AppDelegate.swift in Sources */,
 				3CCEFB94209D4AF800429258 /* DeleteNoteViewController.swift in Sources */,
 			);
@@ -296,7 +300,6 @@
 		3CCEFB88209D37AD00429258 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Sticky Notes/Sticky_Notes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -316,7 +319,6 @@
 		3CCEFB89209D37AD00429258 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Sticky Notes/Sticky_Notes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
