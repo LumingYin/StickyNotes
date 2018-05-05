@@ -12,10 +12,21 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var arrayOfStickyWindowControllers: [StickyWindowController] = []
+    @IBOutlet weak var askBeforeDeletionMenuItem: NSMenuItem!
     
     @IBAction func closeWindowClicked(_ sender: Any) {
         if let stickyWindowController = NSApplication.shared.keyWindow?.windowController as? StickyWindowController {
             stickyWindowController.deleteStickyNote(self)
+        }
+    }
+    
+    @IBAction func toggleDeletionWithoutAsking(_ sender: Any) {
+        let skipPrompt = UserDefaults.standard.bool(forKey: "ShouldDeleteWithoutPrompting")
+        UserDefaults.standard.set(!skipPrompt, forKey: "ShouldDeleteWithoutPrompting")
+        if skipPrompt {
+            self.askBeforeDeletionMenuItem.state = .off
+        } else {
+            self.askBeforeDeletionMenuItem.state = .on
         }
     }
     
@@ -42,6 +53,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let skipPrompt = UserDefaults.standard.bool(forKey: "ShouldDeleteWithoutPrompting")
+        if skipPrompt {
+            askBeforeDeletionMenuItem.state = .on
+        } else {
+            askBeforeDeletionMenuItem.state = .off
+        }
         var hasExistingDataFetched: Bool = false
         do {
             let fetchRequest: NSFetchRequest<Sticky> = Sticky.fetchRequest()

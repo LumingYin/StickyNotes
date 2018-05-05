@@ -20,8 +20,11 @@ class DeleteNoteViewController: NSViewController {
     }
     
     @IBAction func toggleDeletionPrompt(_ sender: NSButton) {
-//        sender.state
-//        UserDefaults.standard.set(<#T##value: Bool##Bool#>, forKey: <#T##String#>)
+        UserDefaults.standard.set(true, forKey: "ShouldDeleteWithoutPrompting")
+        UserDefaults.standard.synchronize()
+        if let delegate = NSApplication.shared.delegate as? AppDelegate {
+            delegate.askBeforeDeletionMenuItem.state = .on
+        }
     }
     
     override func viewDidLoad() {

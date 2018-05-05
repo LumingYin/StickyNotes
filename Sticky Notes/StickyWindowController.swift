@@ -136,17 +136,14 @@ class StickyWindowController: NSWindowController {
     }
     
     @IBAction func deleteStickyNote(_ sender: Any) {
+        let skipPrompt = UserDefaults.standard.bool(forKey: "ShouldDeleteWithoutPrompting")
+        if skipPrompt {
+            deleteAssociatedNote()
+            return
+        }
         if (deleteVC == nil) {
             deleteVC = DeleteNoteViewController(deleteCompletion: {
-                self.window?.close()
-                if let delegate = NSApplication.shared.delegate as? AppDelegate,
-                    let index = delegate.arrayOfStickyWindowControllers.index(of: self) {
-                    if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext, let stk = self.sticky {
-                        context.delete(stk)
-                        
-                    }
-                    delegate.arrayOfStickyWindowControllers.remove(at: index)
-                }
+                self.deleteAssociatedNote()
             }, cancelCompletion: {
                 self.plusButton.isEnabled = true
                 self.moreButton.isEnabled = true
@@ -160,6 +157,18 @@ class StickyWindowController: NSWindowController {
         self.moreButton.isEnabled = false
         self.deleteButton.isEnabled = false
         dimBox.isHidden = false
+    }
+    
+    func deleteAssociatedNote() {
+        self.window?.close()
+        if let delegate = NSApplication.shared.delegate as? AppDelegate,
+            let index = delegate.arrayOfStickyWindowControllers.index(of: self) {
+            if let context = (NSApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext, let stk = self.sticky {
+                context.delete(stk)
+                
+            }
+            delegate.arrayOfStickyWindowControllers.remove(at: index)
+        }
     }
     
     @IBAction func newStickyNote(_ sender: Any) {
