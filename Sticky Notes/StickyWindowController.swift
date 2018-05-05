@@ -39,7 +39,8 @@ class StickyWindowController: NSWindowController {
         self.window?.standardWindowButton(.zoomButton)?.isHidden = true
 //        let plusTrackingArea = NSTrackingArea.init(rect: plusButton.bounds, options: NSTrackingArea.Options(rawValue: NSTrackingArea.Options.RawValue(UInt8(NSTrackingArea.Options.mouseEnteredAndExited.rawValue) | UInt8(NSTrackingArea.Options.activeAlways.rawValue))), owner: self, userInfo: nil)
 //        plusButton.addTrackingArea(plusTrackingArea)
-        
+        self.contentTextView.font = NSFont.systemFont(ofSize: 20, weight: .light)
+
         if let stk = sticky {
             if let content = stk.noteContent {
                 self.contentTextView.textStorage?.setAttributedString(content)
@@ -53,7 +54,6 @@ class StickyWindowController: NSWindowController {
                 NSAnimationContext.endGrouping()
             }
         }
-        self.contentTextView.font = NSFont.systemFont(ofSize: 20, weight: .light)
         self.window?.makeFirstResponder(self.contentTextView)
     }
     
