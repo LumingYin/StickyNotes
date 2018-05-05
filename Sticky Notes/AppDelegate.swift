@@ -13,16 +13,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var arrayOfStickieWindowControllers: [StickieWindowController] = []
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    @IBAction func makeNewStickyClicked(_ sender: Any) {
+        makeNewSticky()
+    }
+    
+    func makeNewSticky() {
+        let newSticky = Sticky(context: persistentContainer.viewContext)
+        newSticky.noteContent = ""
+        newSticky.colorTag = 0
+        makeNewSticky(newSticky)
+    }
+    
+    func makeNewSticky(_ sticky: Sticky) {
         let newVC = StickieWindowController()
-        arrayOfStickieWindowControllers.append(newVC)
+        newVC.sticky = sticky
+        self.arrayOfStickieWindowControllers.append(newVC)
         newVC.showWindow(nil)
         newVC.window?.orderFront(nil)
-        // Insert code here to initialize your application
+    }
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        var hasExistingDataFetched: Bool = false
+        do {
+            let fetchRequest: NSFetchRequest<Sticky> = Sticky.fetchRequest()
+            let stickies = try self.persistentContainer.viewContext.fetch(fetchRequest)
+            for sticky in stickies {
+                makeNewSticky(sticky)
+                hasExistingDataFetched = true
+            }
+        } catch {}
+
+        if !hasExistingDataFetched {
+            makeNewSticky()
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
     }
 
     // MARK: - Core Data stack
@@ -80,6 +106,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        for noteWindow in arrayOfStickieWindowControllers {
+            let sticky = noteWindow.sticky
+            sticky?.noteContent = noteWindow.contentTextView.string
+            sticky?.colorTag = Int16(noteWindow.currentColorTag)
+        }
+        
         // Save changes in the application's managed object context before the application terminates.
         let context = persistentContainer.viewContext
         

@@ -10,9 +10,28 @@ import Cocoa
 
 class DeleteNoteViewController: NSViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
+    var deleteCompletion: (() -> ())?
+    var cancelCompletion: (() -> ())?
+    
+    convenience init(deleteCompletion: (() -> ())?, cancelCompletion: (() -> ())?) {
+        self.init()
+        self.deleteCompletion = deleteCompletion
+        self.cancelCompletion = cancelCompletion
     }
     
+    @IBAction func toggleDeletionPrompt(_ sender: NSButton) {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func deleteButtonClicked(_ sender: Any) {
+        deleteCompletion?()
+    }
+    
+    @IBAction func keepButtonClicked(_ sender: Any) {
+        cancelCompletion?()
+    }
 }

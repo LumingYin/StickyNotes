@@ -13,7 +13,10 @@
                 <outlet property="colorButtonsStackView" destination="14w-tR-fMA" id="nI2-Xd-E3v"/>
                 <outlet property="colorSelectorBox" destination="yd3-7l-psw" id="j24-zt-AzC"/>
                 <outlet property="contentBox" destination="dNG-68-th4" id="jIk-RP-Gdp"/>
+                <outlet property="contentTextView" destination="ciy-e5-lp4" id="i0h-SM-wTa"/>
                 <outlet property="deleteButton" destination="JKn-iU-1OJ" id="Ufz-UX-aNm"/>
+                <outlet property="deleteViewContainer" destination="mGA-pK-Tie" id="pv2-4t-ljW"/>
+                <outlet property="dimBox" destination="gkD-k6-c0E" id="atU-7r-5C5"/>
                 <outlet property="moreButton" destination="cFh-nJ-oFv" id="eRu-VX-dC7"/>
                 <outlet property="plusButton" destination="zOn-qj-dUF" id="cDn-vh-sDT"/>
                 <outlet property="titleBarBox" destination="A5X-8R-a6p" id="UOZ-Gv-YHR"/>
@@ -29,7 +32,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <box boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="dNG-68-th4" userLabel="contentBox">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
@@ -50,9 +53,9 @@
                                                 <size key="minSize" width="440" height="357"/>
                                                 <size key="maxSize" width="480" height="10000000"/>
                                                 <attributedString key="textStorage">
-                                                    <fragment content="Welcome to Sticky Notes.">
+                                                    <fragment content=" ">
                                                         <attributes>
-                                                            <font key="NSFont" metaFont="systemLight" size="21"/>
+                                                            <font key="NSFont" metaFont="systemLight" size="20"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -173,7 +176,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="52d-Ig-a3c"/>
                                                 <constraint firstAttribute="width" constant="40" id="gQW-UL-sWk"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="tick_black" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="LVF-2V-CLe">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="LVF-2V-CLe">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -368,17 +371,42 @@
                         </constraints>
                         <color key="fillColor" red="1" green="0.97254901960784312" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </box>
+                    <box hidden="YES" boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="gkD-k6-c0E" userLabel="dimBox">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                        <view key="contentView" id="6iW-Qj-wQ2">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="mGA-pK-Tie">
+                                    <rect key="frame" x="90" y="136" width="300" height="165"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="165" id="2SL-u1-d6N"/>
+                                        <constraint firstAttribute="width" constant="300" id="5Mg-2W-gVU"/>
+                                    </constraints>
+                                </customView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="mGA-pK-Tie" firstAttribute="centerX" secondItem="6iW-Qj-wQ2" secondAttribute="centerX" id="MbH-dg-eyP"/>
+                                <constraint firstItem="mGA-pK-Tie" firstAttribute="centerY" secondItem="6iW-Qj-wQ2" secondAttribute="centerY" id="WyQ-Sj-a1I"/>
+                            </constraints>
+                        </view>
+                        <color key="fillColor" white="0.0" alpha="0.4825824058219178" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </box>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="A5X-8R-a6p" secondAttribute="trailing" id="16F-2h-Ptr"/>
                     <constraint firstAttribute="bottom" secondItem="dNG-68-th4" secondAttribute="bottom" id="3cQ-dW-9Mp"/>
                     <constraint firstAttribute="trailing" secondItem="dNG-68-th4" secondAttribute="trailing" id="84Y-T7-6zP"/>
+                    <constraint firstItem="gkD-k6-c0E" firstAttribute="top" secondItem="yd3-7l-psw" secondAttribute="bottom" id="BUY-XX-bB1"/>
                     <constraint firstAttribute="trailing" secondItem="A5X-8R-a6p" secondAttribute="trailing" id="DME-zZ-vB4"/>
                     <constraint firstItem="yd3-7l-psw" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="DZb-Nk-ZaK"/>
+                    <constraint firstItem="gkD-k6-c0E" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="F60-ff-Ww4"/>
                     <constraint firstItem="A5X-8R-a6p" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="OeB-qn-lRm"/>
+                    <constraint firstAttribute="trailing" secondItem="gkD-k6-c0E" secondAttribute="trailing" id="ZxQ-wx-snn"/>
                     <constraint firstItem="dNG-68-th4" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="gGB-Ub-9HF"/>
                     <constraint firstAttribute="trailing" secondItem="yd3-7l-psw" secondAttribute="trailing" id="hE7-3l-VGa"/>
                     <constraint firstItem="A5X-8R-a6p" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="kbG-CI-tpt"/>
+                    <constraint firstAttribute="bottom" secondItem="gkD-k6-c0E" secondAttribute="bottom" id="n3s-dj-u0x"/>
                     <constraint firstItem="A5X-8R-a6p" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="s14-04-UZb"/>
                     <constraint firstItem="yd3-7l-psw" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="-64" id="vYB-OU-cLU"/>
                     <constraint firstItem="dNG-68-th4" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="zHs-JE-gib"/>
@@ -394,6 +422,5 @@
         <image name="add" width="45" height="48"/>
         <image name="delete" width="38" height="47"/>
         <image name="more" width="42" height="9"/>
-        <image name="tick_black" width="51" height="37"/>
     </resources>
 </document>
