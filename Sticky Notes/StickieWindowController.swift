@@ -45,8 +45,9 @@ class StickieWindowController: NSWindowController {
             self.updateColorAccordingToTag(tag: Int(stk.colorTag))
         }
         self.contentTextView.font = NSFont.systemFont(ofSize: 20, weight: .light)
-        self.contentTextView.becomeFirstResponder()
+        self.window?.makeFirstResponder(self.contentTextView)
     }
+    
     
     override func mouseEntered(with event: NSEvent) {
         print("mouse entered \(event)")

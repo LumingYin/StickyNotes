@@ -17,6 +17,7 @@
 		3CCEFB91209D402E00429258 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB90209D402D00429258 /* FlatButton.swift */; };
 		3CCEFB94209D4AF800429258 /* DeleteNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCEFB92209D4AF800429258 /* DeleteNoteViewController.swift */; };
 		3CCEFB95209D4AF800429258 /* DeleteNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CCEFB93209D4AF800429258 /* DeleteNoteViewController.xib */; };
+		3CDEC13E209D5C0C008B0F95 /* sticky.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3CDEC13D209D5C0C008B0F95 /* sticky.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3CCEFB90209D402D00429258 /* FlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
 		3CCEFB92209D4AF800429258 /* DeleteNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteViewController.swift; sourceTree = "<group>"; };
 		3CCEFB93209D4AF800429258 /* DeleteNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteNoteViewController.xib; sourceTree = "<group>"; };
+		3CDEC13D209D5C0C008B0F95 /* sticky.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = sticky.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		3CCEFB78209D37AB00429258 /* Sticky Notes */ = {
 			isa = PBXGroup;
 			children = (
+				3CDEC13D209D5C0C008B0F95 /* sticky.icns */,
 				3CCEFB90209D402D00429258 /* FlatButton.swift */,
 				3CCEFB79209D37AB00429258 /* AppDelegate.swift */,
 				3CCEFB8A209D37D000429258 /* StickieWindowController.swift */,
@@ -139,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CDEC13E209D5C0C008B0F95 /* sticky.icns in Resources */,
 				3CCEFB8D209D37D000429258 /* StickieWindowController.xib in Resources */,
 				3CCEFB95209D4AF800429258 /* DeleteNoteViewController.xib in Resources */,
 				3CCEFB7F209D37AD00429258 /* Assets.xcassets in Resources */,
