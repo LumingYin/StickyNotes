@@ -10,6 +10,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DeleteNoteViewController" customModule="Sticky_Notes" customModuleProvider="target">
             <connections>
+                <outlet property="deleteButton" destination="sYw-65-gEC" id="cSj-Zp-zqP"/>
+                <outlet property="keepButton" destination="dUv-O4-PLZ" id="sks-Am-l73"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>

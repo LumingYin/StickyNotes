@@ -10,6 +10,8 @@ import Cocoa
 
 class DeleteNoteViewController: NSViewController {
 
+    @IBOutlet weak var deleteButton: FlatButton!
+    @IBOutlet weak var keepButton: FlatButton!
     var deleteCompletion: (() -> ())?
     var cancelCompletion: (() -> ())?
     

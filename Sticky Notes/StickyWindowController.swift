@@ -33,6 +33,7 @@ class StickyWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        self.window?.isMovableByWindowBackground = true
         self.window?.standardWindowButton(.closeButton)?.isHidden = true
         self.window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
         self.window?.standardWindowButton(.zoomButton)?.isHidden = true
@@ -149,6 +150,7 @@ class StickyWindowController: NSWindowController {
                 self.moreButton.isEnabled = true
                 self.deleteButton.isEnabled = true
                 self.dimBox.isHidden = true
+                self.contentTextView.isEditable = true
             })
             deleteViewContainer.addSubview((deleteVC?.view)!)
         }
@@ -156,6 +158,7 @@ class StickyWindowController: NSWindowController {
         self.plusButton.isEnabled = false
         self.moreButton.isEnabled = false
         self.deleteButton.isEnabled = false
+        self.contentTextView.isEditable = false
         dimBox.isHidden = false
     }
     
