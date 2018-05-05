@@ -154,7 +154,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="310" height="64"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <stackView distribution="fillEqually" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14w-tR-fMA">
+                                <stackView wantsLayer="YES" distribution="fillEqually" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" translatesAutoresizingMaskIntoConstraints="NO" id="14w-tR-fMA">
                                     <rect key="frame" x="15" y="12" width="280" height="40"/>
                                     <subviews>
                                         <button wantsLayer="YES" horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ewk-wm-8jq" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
@@ -163,7 +163,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="52d-Ig-a3c"/>
                                                 <constraint firstAttribute="width" constant="40" id="gQW-UL-sWk"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="LVF-2V-CLe">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="LVF-2V-CLe">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -185,13 +185,13 @@
                                                 <action selector="colorChanged:" target="-2" id="ZZg-QA-w3O"/>
                                             </connections>
                                         </button>
-                                        <button wantsLayer="YES" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="p6I-as-qrt" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
+                                        <button wantsLayer="YES" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="p6I-as-qrt" userLabel="Flat Button" customClass="FlatButton" customModule="Sticky_Notes" customModuleProvider="target">
                                             <rect key="frame" x="48" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="9Bk-wJ-xuC"/>
                                                 <constraint firstAttribute="height" constant="40" id="hXH-zz-22A"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="yaT-Zh-XSv">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="yaT-Zh-XSv">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -219,7 +219,7 @@
                                                 <constraint firstAttribute="width" constant="40" id="5cz-Sc-MF4"/>
                                                 <constraint firstAttribute="height" constant="40" id="u5V-cl-cxX"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="zfY-xa-ot2">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="zfY-xa-ot2">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -247,7 +247,7 @@
                                                 <constraint firstAttribute="width" constant="40" id="DGW-Hz-0Jz"/>
                                                 <constraint firstAttribute="height" constant="40" id="S3X-FW-toF"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="MPT-d0-P9p">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="MPT-d0-P9p">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -275,7 +275,7 @@
                                                 <constraint firstAttribute="width" constant="40" id="Zmw-Y4-3v8"/>
                                                 <constraint firstAttribute="height" constant="40" id="aJG-J8-kX2"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="5Rc-Jn-vqF">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="5Rc-Jn-vqF">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -303,7 +303,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="PrF-mV-YsE"/>
                                                 <constraint firstAttribute="width" constant="40" id="l6s-vi-iG8"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="IPu-Ja-Bwc">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="IPu-Ja-Bwc">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>

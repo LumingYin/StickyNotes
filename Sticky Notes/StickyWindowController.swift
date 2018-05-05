@@ -20,6 +20,9 @@ class StickyWindowController: NSWindowController {
     @IBOutlet weak var colorButtonsStackView: NSStackView!
     @IBOutlet weak var deleteViewContainer: NSView!
     @IBOutlet var contentTextView: NSTextView!
+    @IBOutlet weak var yellowChangeButton: FlatButton!
+    @IBOutlet weak var greenChangeButton: FlatButton!
+    
     var currentColorTag = 0
     var deleteVC: DeleteNoteViewController?
     var sticky: Sticky?
@@ -101,8 +104,9 @@ class StickyWindowController: NSWindowController {
     
     
     @IBAction func colorChanged(_ sender: NSButton) {
-        sender.image = tick_black
-        sender.displayIfNeeded()
+//        print(sender)
+//        sender.image = NSImage(named: NSImage.Name(rawValue: "tick_black"))
+//        sender.setNeedsDisplay()
         updateColorAccordingToTag(tag: sender.tag)
         NSAnimationContext.beginGrouping()
         NSAnimationContext.current.duration = 0.2
@@ -136,7 +140,6 @@ class StickyWindowController: NSWindowController {
     
     func updateColorAccordingToString(colorName: String) {
         if colorName == "yellow" || colorName == "gray" {
-            print(plusButton)
             plusButton.image = NSImage(named: NSImage.Name(rawValue: "add"))
             deleteButton.image = NSImage(named: NSImage.Name(rawValue: "delete"))
             moreButton.image = NSImage(named: NSImage.Name(rawValue: "more"))
