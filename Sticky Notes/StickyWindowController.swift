@@ -23,6 +23,7 @@ class StickyWindowController: NSWindowController {
     var currentColorTag = 0
     var deleteVC: DeleteNoteViewController?
     var sticky: Sticky?
+    var tick_black = NSImage(named: NSImage.Name(rawValue: "tick_black"))
     
     convenience init() {
         self.init(windowNibName: NSNib.Name(rawValue: "StickyWindowController"))
@@ -99,7 +100,9 @@ class StickyWindowController: NSWindowController {
     }
     
     
-    @IBAction func colorChanged(_ sender: FlatButton) {
+    @IBAction func colorChanged(_ sender: NSButton) {
+        sender.image = tick_black
+        sender.displayIfNeeded()
         updateColorAccordingToTag(tag: sender.tag)
         NSAnimationContext.beginGrouping()
         NSAnimationContext.current.duration = 0.2
@@ -128,7 +131,6 @@ class StickyWindowController: NSWindowController {
             updateColorAccordingToString(colorName: "gray")
         default:
             updateColorAccordingToString(colorName: "yellow")
-
         }
     }
     

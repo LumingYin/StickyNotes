@@ -17,6 +17,21 @@ class InteractiveButton: NSButton {
         // Drawing code here.
     }
     
+    @IBInspectable public var cornerRadius: CGFloat = 0.0 {
+        didSet {
+            layer?.cornerRadius = cornerRadius
+        }
+    }
+    
+    @IBInspectable public var activeButtonColor: NSColor? {
+        didSet {
+            if let color = activeButtonColor {
+                layer?.backgroundColor = color.cgColor
+            }
+        }
+    }
+
+
     override func updateTrackingAreas() {
         super.updateTrackingAreas()
         let area = NSTrackingArea.init(rect: self.bounds, options: [.mouseEnteredAndExited, .activeAlways], owner: self, userInfo: nil)
