@@ -24,10 +24,10 @@ class StickyWindowController: NSWindowController {
     var currentColorTag = 0
     var deleteVC: DeleteNoteViewController?
     var sticky: Sticky?
-    var tick_black = NSImage(named: NSImage.Name(rawValue: "tick_black"))
+    var tick_black = NSImage(named: "tick_black")
     
     convenience init() {
-        self.init(windowNibName: NSNib.Name(rawValue: "StickyWindowController"))
+        self.init(windowNibName: "StickyWindowController")
     }
 
     override func windowWillLoad() {
@@ -107,7 +107,7 @@ class StickyWindowController: NSWindowController {
         updateColorAccordingToTag(tag: sender.tag)
         NSAnimationContext.beginGrouping()
         NSAnimationContext.current.duration = 0.2
-        NSAnimationContext.current.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
+        NSAnimationContext.current.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeInEaseOut)
         NSAnimationContext.current.completionHandler = {
             self.colorBoxTopConstraint.constant = -64
         }
@@ -138,27 +138,27 @@ class StickyWindowController: NSWindowController {
     
     func updateColorAccordingToString(colorName: String) {
         if colorName == "yellow" || colorName == "gray" {
-            plusButton.image = NSImage(named: NSImage.Name(rawValue: "add"))
-            deleteButton.image = NSImage(named: NSImage.Name(rawValue: "delete"))
-            moreButton.image = NSImage(named: NSImage.Name(rawValue: "more"))
+            plusButton.image = NSImage(named: "add")
+            deleteButton.image = NSImage(named: "delete")
+            moreButton.image = NSImage(named: "more")
         } else {
-            plusButton.image = NSImage(named: NSImage.Name(rawValue: "add_white"))
-            deleteButton.image = NSImage(named: NSImage.Name(rawValue: "delete_white"))
-            moreButton.image = NSImage(named: NSImage.Name(rawValue: "more_white"))
+            plusButton.image = NSImage(named: "add_white")
+            deleteButton.image = NSImage(named: "delete_white")
+            moreButton.image = NSImage(named: "more_white")
         }
-        guard let dark = NSColor(named: NSColor.Name(rawValue: "\(colorName)_dark")), let light = NSColor(named: NSColor.Name(rawValue: "\(colorName)_light")), let medium = NSColor(named: NSColor.Name(rawValue: "\(colorName)_medium")) else {
+        guard let dark = NSColor(named: "\(colorName)_dark"), let light = NSColor(named: "\(colorName)_light"), let medium = NSColor(named: "\(colorName)_medium") else {
             return
         }
         self.titleBarBox.fillColor = dark
         self.colorSelectorBox.fillColor = light
         self.contentBox.fillColor = medium
-
+        self.contentTextView.insertionPointColor = dark
     }
     
     @IBAction func moreColorOptions(_ sender: Any) {
         NSAnimationContext.beginGrouping()
         NSAnimationContext.current.duration = 0.2
-        NSAnimationContext.current.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
+        NSAnimationContext.current.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeInEaseOut)
         NSAnimationContext.current.completionHandler = {
             self.colorBoxTopConstraint.constant = 0
         }
