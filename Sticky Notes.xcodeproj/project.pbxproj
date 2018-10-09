@@ -120,6 +120,11 @@
 					3CCEFB75209D37AB00429258 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -304,7 +309,8 @@
 				CODE_SIGN_ENTITLEMENTS = "Sticky Notes/Sticky_Notes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 54362BT7G2;
+				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Sticky Notes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -323,7 +329,8 @@
 				CODE_SIGN_ENTITLEMENTS = "Sticky Notes/Sticky_Notes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 54362BT7G2;
+				DEVELOPMENT_TEAM = 3Q7XKEDZ36;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Sticky Notes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
